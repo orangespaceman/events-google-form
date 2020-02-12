@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>
+      Event form
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../_assets/css/form.css">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-touch-fullscreen" content="yes">
+  </head>
+  <body>
+    <main class="Wrapper">
+
+      <div class="Welcome">
+        <h1 class="Welcome-title">Curiosity Sussex</h1>
+        <p class="Welcome-text">Please add your event</p>
+      </div>
+
+      <form class="Form" action="">
+        <div class="Form-content">
+          <div class="Form-row">
+            <label class="Form-label" for="name">
+              Event name
+            </label>
+            <input class="Form-input" type="text" id="name" placeholder="" required>
+          </div>
+          <div class="Form-row">
+            <label class="Form-label" for="url">
+              URL
+            </label>
+            <input class="Form-input" type="text" id="url" placeholder="" required>
+          </div>
+          <div class="Form-row">
+            <label class="Form-label" for="type">
+              Event type
+            </label>
+            <div class="Form-selectWrap">
+              <select class="Form-select" id="type">
+                <option></option>
+                <option>Curiosity Sussex</option>
+                <option>Astronomy</option>
+                <option>Other event</option>
+                <option>Other club</option>
+              </select>
+            </div>
+          </div>
+          <div class="Form-row">
+            <label class="Form-label" for="date">
+              Date
+            </label>
+            <input class="Form-input" type="date" id="date" placeholder="" required>
+          </div>
+          <div class="Form-row">
+            <label class="Form-label" for="start-time">
+              Start time
+            </label>
+            <input class="Form-input" type="time" id="starttime" placeholder="" required>
+          </div>
+          <div class="Form-row">
+            <label class="Form-label" for="end-time">
+              End time
+            </label>
+            <input class="Form-input" type="time" id="endtime" placeholder="" required>
+          </div>
+
+          <div class="Form-row">
+            <label class="Form-label" for="address">
+              Address
+            </label>
+            <textarea class="Form-textarea" id="address" placeholder="" rows="3" required></textarea>
+          </div>
+
+          <div class="Form-row">
+            <label class="Form-label" for="postcode">
+              Postcode
+            </label>
+            <input class="Form-input" type="text" id="postcode" placeholder="" maxlength="8" required>
+          </div>
+
+
+          <div class="Form-row">
+            <button class="Form-submit" disabled>Done</button>
+            <button type="button" class="Form-cancel">Cancel</button>
+          </div>
+        </div>
+
+        <div class="Form-complete">
+          <h2 class="Form-completeTitle">Thank you!</h2>
+          <p class="Form-completeText">You will be added to our map shortly...</p>
+        </div>
+      </form>
+
+    </main>
+
+    <div class="Background">
+      <canvas class="Background-canvas"></canvas>
+    </div>
+
+    <script src="../config.js"></script>
+    <script src="../_assets/js/form.js"></script>
+    <script src="../_assets/js/particles.js"></script>
+  </body>
+</html>

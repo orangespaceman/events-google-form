@@ -1,0 +1,217 @@
+/* Make the map fill the window */
+/* Defaults */
+
+html {
+  box-sizing:border-box;
+}
+
+*,
+:after,
+:before {
+  box-sizing:inherit;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+html {
+  font-family: Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-map {
+  height: 100%;
+  position: relative;
+}
+
+.content.show-table .content-map {
+  height: 50%;
+}
+
+.content-table {
+  height: 0;
+  overflow: hidden;
+}
+
+.content.show-table .content-table {
+  height: 50%;
+  overflow-y: scroll;
+  padding: 1em;
+}
+
+/* Set the map height to define the size of the map element */
+
+#map {
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.leaflet-tile-pane {
+  filter: grayscale(100%);
+}
+
+/* popup content */
+.leaflet-popup-content .popup-content p {
+  margin: 0;
+}
+
+.popup-name {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.popup-date {
+  font-size: 0.8rem;
+}
+
+/* stats */
+
+.stats {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  z-index: 2;
+}
+
+.table-toggle {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.6);
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.table-toggle:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+/* table */
+
+.event-table-container {}
+
+.event-table {
+  border-collapse: collapse;
+  border-color: #fff;
+  border-spacing: 0;
+  border-width: 0;
+  display: inline-block;
+  margin: 1em 0 1em 0;
+  max-width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+  width: 100%;
+}
+
+@media (min-width: 62.5em) {
+  .event-table {
+    display: table;
+    white-space: inherit;
+  }
+}
+
+.event-table thead,
+.event-table tfoot {
+  background: #036;
+  color: #fff;
+  text-align: left;
+}
+
+.event-table th {
+  border-bottom: 2px solid #fff;
+  padding: 1em;
+  text-align: left;
+  border: 1px solid #fff;
+  padding: 1em;
+  vertical-align: top;
+}
+
+.event-table td {
+  background: #fff;
+  border-bottom: 2px solid #fff;
+  color: #036;
+  padding: 1em;
+}
+
+.event-table tr:nth-child(even) td {
+  background-color: #efefef;
+}
+
+/* log */
+
+.log {
+  position: absolute;
+  bottom: 1rem;
+  left: 33%;
+  right: 33%;
+  z-index: 2;
+  margin: 0;
+  max-height: 6rem;
+  overflow: scroll;
+  text-align: center;
+  list-style: none;
+}
+
+.log li {
+  background: rgba(255, 255, 255, 0.6);
+  width: auto;
+  margin-bottom: 0.2rem;
+  opacity: 0;
+  animation: log 6s linear 1;
+}
+
+@keyframes log {
+  0%, 75% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* timer */
+
+.timer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.3);
+  height: 0.5rem;
+  z-index: 2;
+}
+
+.timer.is-waiting::before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background: rgba(255, 128, 0, 0.8);
+
+  animation-name: timer;
+  animation-duration: 30s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-direction: normal;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+}
+
+@keyframes timer {
+  from { width: 0; }
+  to { width: 100%; }
+}

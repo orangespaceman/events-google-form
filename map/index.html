@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>
+      Map
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../_assets/css/map.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-touch-fullscreen" content="yes">
+  </head>
+  <body>
+    <div class="content">
+      <div class="content-map">
+        <div id="map"></div>
+        <div class="timer"></div>
+        <div class="stats">
+          <button class="table-toggle">
+            <span class="table-toggle-state">Show</span> event list (<span class="stat-events">0</span> events)
+          </button>
+        </div>
+        <ul class="log"></ul>
+      </div>
+      <div class="content-table">
+        <div class="event-table-container">
+          <table class="event-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Date</th>
+                <th>Address</th>
+              </tr>
+            </thead>
+            <tbody class="event-table-list">
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script src="../config.js"></script>
+    <script src="../_assets/js/map.js"></script>
+  </body>
+</html>
